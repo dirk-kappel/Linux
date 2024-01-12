@@ -1,4 +1,4 @@
-# IP Tables
+# IP Tables - Linux tool to create a custom firewall
 
 ## TABLES
 ### Consists of 5 Tables. First three are main.
@@ -34,3 +34,85 @@
      - RETURN
      - USER-DEFINED
   2. **Non-Terminating Targets** - Perform an action then continue the chain. 
+
+
+# Command Syntax
+
+## List out iptable rules
+`sudo iptables -L -n -v`
+- **-L** : list out the table
+- **-n** : numeric format
+- **-v** : verbose
+- Results are given for the default table (FILTER) since no table was specified.
+`sudo iptables -t mangle -L -n -v`
+- **-t** : will list out a specified table (mangle)
+
+# Output:
+[ec2-user@ip-172-31-82-175 ~]$ sudo iptables -L -n -v
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination    
+
+- No rules are setup yet.
+
+## Syntax
+`iptables -t [table] -OPTIONS [CHAIN] [Matching Component] [Action Component]`
+- **t** : The table name. You can provide any of the five from above. Default is the filter table.
+- **-OPTIONS [CHAIN]** : The chain that you want the rule to apply to.
+  - A [APPEND] 
+  - D [DELETE]
+  - I [INSERT]
+  - R [REPLACE]
+  - Z [ZERO COUNTERS]
+  - L [LIST]
+  - P [POLICY]
+  - E [RENAME]
+  - F [FLUSH]
+  - N [NEW USER DEFINED CHAIN]
+  - D [DELETE CHAIN]
+- **[Matching Component]** : Give a condition, if it is true then take action. If not then continue to the next rule.
+  - [Itables matches](https://www.frozentux.net/iptables-tutorial/chunkyhtml/c2264.html)
+  1. Generic conditions:
+    - p : Protocol
+    - s : Source IP
+    - d : Dest IP
+    - i : INput interface
+    - o : OUTput interface
+  2. Implicit:
+    - TCP:
+      -sport
+      -dport
+    --tcp-flags
+  3. Explicit:
+    - Match Extensions
+    -m : conntrack, dscp, ecn, iprange, etc
+- **[Action Component]** : Action to perform if the condition is true.
+  - -j : (for jump)
+    - ACCEPT : Accept the packet.
+    - DROP : Drop the packet.
+    - REJECT : Similar to drop but a response is sent back to the source.
+    - RETURN : Stop the traverse and return to the previous chain with no effect.
+
+# Examples:
+
+## Block a website:
+
+### Add a rule
+`sudo iptables -A INPUT -s example.com -j DROP`
+
+### Remove a rule
+`sudo iptables -D INPUT 1`
+- 1 is the rule number to remove.
+
+### Change the default policy to drop
+`sudo iptables -P INPUT DROP`
+
+### Change the policy back to accept
+`sudo iptables -P INPUT ACCEPT`
+
