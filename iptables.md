@@ -1,4 +1,4 @@
-# IP Tables - Linux tool to create a custom firewall
+# [IP Tables - Linux tool to create a custom firewall](https://www.frozentux.net/iptables-tutorial/chunkyhtml/)
 
 ## TABLES
 ### Consists of 5 Tables. First three are main.
@@ -44,6 +44,7 @@
 - **-n** : numeric format
 - **-v** : verbose
 - Results are given for the default table (FILTER) since no table was specified.
+
 `sudo iptables -t mangle -L -n -v`
 - **-t** : will list out a specified table (mangle)
 
@@ -61,7 +62,7 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
 
 - No rules are setup yet.
 
-## Syntax
+## [Syntax](https://www.frozentux.net/iptables-tutorial/chunkyhtml/c1914.html)
 `iptables -t [table] -OPTIONS [CHAIN] [Matching Component] [Action Component]`
 - **t** : The table name. You can provide any of the five from above. Default is the filter table.
 - **-OPTIONS [CHAIN]** : The chain that you want the rule to apply to.
@@ -77,19 +78,18 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
   - N [NEW USER DEFINED CHAIN]
   - D [DELETE CHAIN]
 - **[Matching Component]** : Give a condition, if it is true then take action. If not then continue to the next rule.
-  - [Itables matches](https://www.frozentux.net/iptables-tutorial/chunkyhtml/c2264.html)
-  1. Generic conditions:
+  1. [Generic conditions:](https://www.frozentux.net/iptables-tutorial/chunkyhtml/c2264.html)
     - p : Protocol
     - s : Source IP
     - d : Dest IP
     - i : INput interface
     - o : OUTput interface
-  2. Implicit:
+  2. [Implicit:](https://www.frozentux.net/iptables-tutorial/chunkyhtml/x2436.html)
     - TCP:
       -sport
       -dport
     --tcp-flags
-  3. Explicit:
+  3. [Explicit:](https://www.frozentux.net/iptables-tutorial/chunkyhtml/x2702.html)
     - Match Extensions
     -m : conntrack, dscp, ecn, iprange, etc
 - **[Action Component]** : Action to perform if the condition is true.
