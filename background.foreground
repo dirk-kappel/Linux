@@ -1,0 +1,10 @@
+ctrl + z : send the current process to background
+
+fg : bring the most recent task to the foreground
+fg 1 : bring task 1 to the foreground
+
+
+jobs : list all the background processes
+
+# add & to the end of a command to run it in the background
+htop &

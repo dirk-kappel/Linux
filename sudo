@@ -1,0 +1,27 @@
+sudo cat /etc/sudoers
+# Shows information regarding sudo users
+# sudo group can be either sudo or wheel
+# Look for members that can run any command (access to ALL)
+
+sudo -l
+# Let's you know what I can do with sudo
+
+sudo !!
+# Run the last command with sudo
+
+/etc/sudoers file: # shouldn't be edited directly.
+ALL=(ALL:ALL) ALL
+# First ALL refers to the host or server you are allowed to execute the host on.
+# (ALL:ALL) or (ALL) refers to the user you are allowed to execute the command as.
+# (user:group) can impersonate the user or group.
+# Last ALL refers to the commands you are allowed to execute.
+
+sudo visudo : make changes to the sudoer file.
+# Opens in nano or vi editor.
+# Changes are checked for syntax errors before saving.
+
+dirk    ALL=(ALL:ALL)   NOPASSWD: /usr/bin/yum,/usr/bin/rm
+# dirk can run yum and rm without a password.
+
+sudo - dirk
+# Switch User to dirk

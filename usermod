@@ -1,0 +1,39 @@
+usermod: modify a user account
+
+sudo usermod -aG admins dirk
+# -aG add user to a group
+# admins : group to be added to.
+# dirk is the user to be added to admins group
+# can add to multiple groups by comma separating them. e.g. -aG admins,users,developers
+
+sudo groupadd admins
+# create an admin group
+
+groups dirk
+# Show what groups dirk is a member of
+
+sudo usermod -d /home/dirk2 --move-home dirk
+# -d : change home directory
+# --move-home : move contents of old home directory to new home directory
+
+sudo usermod -l dirk_new_name dirk_current_name
+# -l : change username
+
+sudo usermod -L dirk
+# -L : lock user account
+
+sudo usermod -U dirk
+# -U : unlock user account
+
+sudo usermod dirk -e 2024-12-31
+# -e : expire user account on a specific date
+
+sudo chage -l dirk
+# -l : list user account aging information (password expiry date, etc.)
+
+sudo gpasswd -d dirk admins
+# -d : delete user (dirk) from group (admins)
+
+passwd <username>
+# Change password for a user
+# Must be the user or in su -

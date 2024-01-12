@@ -1,0 +1,3 @@
+dnf search <apache>
+
+sudo dnf install httpd

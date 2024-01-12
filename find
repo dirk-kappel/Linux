@@ -1,0 +1,26 @@
+find /home/wsl2 -name *.txt
+# Find any files in my home directory that is a txt extension.
+
+find /home/wsl2 -name '*.txt'
+# Quote the name to search recursively.
+
+find /home/wsl2 -name '*.txt' | grep -v .local
+# Exclude the .local directory.
+
+find . -name Documents -type f
+# Find all files named Documents in the current directory.
+# -d for directory, -f for file.
+
+find . -type f -name Documents -exec rm {} +
+# Find all files named Documents in the current directory and delete them.
+# -exec : execute a command on the results.
+# rm is the command
+# {} is the placeholder for the results
+# + is the end of the command, \; is another way of ending the command. You need to terminate the find command anytime you are using the find command.
+
+# Example:
+find Pictures/ -type f -exec chmod 600 {} +
+# Find all files in the Pictures directory and change the permissions to 600.
+
+sudo find /var/log -type f -name '*.log' -exec truncate -s 0 {} +
+# Find all files in the /var/log directory that ends with .log and truncate them to 0 bytes.

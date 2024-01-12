@@ -1,0 +1,18 @@
+sudo chage -E 2025-01-22 dirk
+# -E : specify expiry date for user account
+
+sudo chage -l neo
+# -l : list user account aging information (password expiry date, etc.)
+
+sudo chage -M 90 neo
+# -M : specify maximum number of days between password change
+# set to -1 for never expire
+
+sudo chage -m 7 neo
+# -m : specify minimum number of days between password change
+
+sudo passwd -l 
+# -l : lock user account
+
+sudo passwd -u
+# -u : unlock user account
