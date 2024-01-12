@@ -1,12 +1,12 @@
 # IP Tables
 
-## TALBES
+## TABLES
 ### Consists of 5 Tables. First three are main.
 1. **FILTER** - Default. When you don't mention a specific table then this will default. 
 2. **NAT** - Provides network address translation rules. 
 3. **MANGLE** - Alter the IP headers of the packet.
 4. **RAW** - Connection tracking. Mark packets for ongoing session.
-5. **SECURITY** - SELinux taging. 
+5. **SECURITY** - SELinux tagging. 
 
 ## Chains
 ### Points in the route of a packet where you can apply rules. 
@@ -22,10 +22,10 @@
 - Locally generated packets: *OUTPUT -> POST ROUTING*
 
 ## RULES
-### Commands to manipulate network track.
+### Commands to manipulate network traffic.
 - e.g. `iptables -A INPUT -s 15.15.15.51 -j DROP`
 - Each rule has two components. **Matching Component**=*[-s 15.15.15.51]* and **Target Component**=*[-j DROP]*
-- You can match by protocal type, destination or source address, destination or source port, input or output interface, headers, etc.
+- You can match by protocol type, destination or source address, destination or source port, input or output interface, headers, etc.
 - The target component is the action when there is a matching component that is satisfied.
   1. **Terminating Targets** - Ends any further traversal of the packet in the chain.
      - ACCEPT
