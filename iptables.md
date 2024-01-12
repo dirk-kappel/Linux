@@ -124,14 +124,16 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
 
 ### Testing commands
 `sudo iptables -A INPUT -p tcp -j ACCEPT`\
-`sudo iptables -A INPUT -j ACCEPT -m comment --comment "Allow all incoming traffic"`\
-- **-m comment --comment** : This will add a comment to the rule.
+`sudo iptables -A INPUT -j ACCEPT -m comment --comment "Allow all incoming traffic"`
+  - **-m comment --comment** : This will add a comment to the rule.
+
 `sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT`\
-`sudo iptables -A INPUT -p tcp --dport http -j ACCEPT -m comment --comment "Allow all incoming traffic"`\
-- The comment will be appended to the default comment of the rule.
+`sudo iptables -A INPUT -p tcp --dport http -j ACCEPT -m comment --comment "Allow all incoming traffic"`
+  - The comment will be appended to the default comment of the rule.
+
 `sudo iptables -A INPUT -s ip-172-31-82-175.ec2.internal/8 -j DROP`\
 `sudo iptables -A INPUT -s 127.0.0.0/8 -j DROP`\
 `sudo iptables -A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT`\
 `sudo iptables -A OUTPUT -p tcp -j ACCEPT`\
-`sudo iptables -I INPUT -s 172.58.56.179 -j ACCEPT`\
-- **-I** : Will insert this rule at the top.
+`sudo iptables -I INPUT -s 172.58.56.179 -j ACCEPT`
+  - **-I** : Will insert this rule at the top.
