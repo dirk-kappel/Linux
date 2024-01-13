@@ -1,4 +1,4 @@
-# Alias
+## Alias
 
 ### Create an alias
 `alias my_alias="ls -lh"`

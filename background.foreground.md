@@ -1,4 +1,4 @@
-# Background / Foreground
+## Send programs to Background / Foreground
 
 ### ctrl + z : send the current process to background
 

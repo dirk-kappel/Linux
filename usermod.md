@@ -43,10 +43,6 @@
 - Using `groups` without a user will show your own user
 - If wanting to view another user's groups you must use **sudo**
 
-### Showing user account information
-`sudo chage -l dirk`
-- **-l** : list user account aging information (password expiry date, etc.)
-
 ### Changing a passwod
 `passwd <username>`
 - Change password for a user

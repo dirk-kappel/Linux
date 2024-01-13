@@ -1,6 +1,6 @@
 
 
-# awk : a scripting language that is used to manipulate data and generate reports.
+## awk : a scripting language that is used to manipulate data and generate reports.
 - Spaces are delimeters for fields for an input file.
 - Takes info from a file(commonly but not required) and outputs to standard output
 - awk is designed to iterate over text files one line at a time.

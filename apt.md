@@ -1,4 +1,4 @@
-# apt
+## apt : package management
 
 ### List of repositories
 `/etc/apt/sources.list`
