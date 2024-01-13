@@ -1,5 +1,0 @@
-/etc/apt/sources.list
-# List of repositories
-
-sudo add-apt-repository <repo name>
-# Add a repository.
