@@ -1,10 +1,11 @@
 
 
 # awk : a scripting language that is used to manipulate data and generate reports.
-### Spaces are delimeters for fields for an input file.
-### Takes info from a file(commonly but not required) and outputs to standard output
-### awk is designed to iterate over text files one line at a time.
+- Spaces are delimeters for fields for an input file.
+- Takes info from a file(commonly but not required) and outputs to standard output
+- awk is designed to iterate over text files one line at a time.
 
+### Generalized command
 `awk 'if(PATTERN1){...do something...} if(PATTERN2){...do something else...}' input.file`
 - if is not needed, it is implied. Whatever pattern is in the parentheses then do what is in the curly braces.
 - (NR==1) : line number 1
