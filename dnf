@@ -1,3 +1,8 @@
-dnf search <apache>
+# dnf is the package manager for fedora distroz
 
-sudo dnf install httpd
+### Search for a package
+'dnf search <apache>'
+
+### Install the apache package
+'sudo dnf install httpd'
+
