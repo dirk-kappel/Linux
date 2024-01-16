@@ -1,10 +1,11 @@
 # Standard In, Standard Out, Standart error
 
-## stdout = standard output. What is being shown on the screen.
+### stdout = standard output. What is being shown on the screen.
 
-## stdin = standard input. Typing in the terminal.
+### stdin = standard input. Typing in the terminal.
 
-## stderr = standard error. When an error is displayed on the screen. 
+### stderr = standard error. When an error is displayed on the screen. 
+
 - echo $? - gives the return code of the previous command. 
 - 0 = success, 1 = failure.
 

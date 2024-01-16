@@ -1,4 +1,4 @@
-## chage : change user password expiry information
+# chage : change user password expiry information
 
 ### Temporary accounts
 `sudo chage -E 2025-01-22 dirk`

@@ -1,4 +1,5 @@
-# Every file is owned by a user and a group.
+# Managing Groups
+- Every file is owned by a user and a group.
 
 ### Find what groups a user is a member of.
 `groups`
