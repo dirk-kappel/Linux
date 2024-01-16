@@ -1,4 +1,4 @@
-# find
+# find : search for files in a directory hierarchy
 
 ### Find any files in my home directory that is a txt extension.
 `find /home/wsl2 -name *.txt`
