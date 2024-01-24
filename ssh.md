@@ -39,3 +39,8 @@ sudo vim /etc/ssh/sshd_config
 - USB device with a button that you insert into your computer. When you press the button it will generate a key and send it to the remote host.
 
 
+### SSH Agent : Allows you to store unlocked key in memory
+`eval $(ssh-agent)`
+- This will start the ssh agent process in the background
+`ssh-add ~/.ssh/id_rsa`
+- This will add the key to the agent. You will be asked for the passphrase.

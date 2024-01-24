@@ -137,3 +137,4 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
 `sudo iptables -A OUTPUT -p tcp -j ACCEPT`\
 `sudo iptables -I INPUT -s 172.58.56.179 -j ACCEPT`
   - **-I** : Will insert this rule at the top.
+`sudo iptables -P FORWARD DROP`
