@@ -3,8 +3,12 @@
 ### Generate a key pair
 `ssh-keygen -b 4096`
 
+`ssh-keygen -p /path/to/key`
+- **-p** : Changes the passphrase of the key. With no arguments it will assume the default key.
+
 ### Copy the public key to the remote host
-`ssh-copy-id ec2-user@18.234.68.160 -i ~/.ssh/rsa_2.pub` 
+`ssh-copy-id -i ~/.ssh/rsa_2.pub ec2-user@18.234.68.160`
+- **-i** : identity file 
 
 ## Protecting ssh. 
 1. Stop ssh. If you are not using it then turn it off. Not practical for most cases.
@@ -44,3 +48,6 @@ sudo vim /etc/ssh/sshd_config
 - This will start the ssh agent process in the background
 `ssh-add ~/.ssh/id_rsa`
 - This will add the key to the agent. You will be asked for the passphrase.
+
+### Show if ssh is listening
+`sudo ss -tunlp | grep ssh`
