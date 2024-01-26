@@ -15,3 +15,7 @@
 ### Disk Free
 `df -h` 
 - Shows the amount of free space on the system. Will show the mounted storage volumes.
+
+### List block devices
+`lsblk -f`
+- **-f** : Output additional information about file systems, including UUID.
