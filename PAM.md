@@ -42,3 +42,6 @@ Also:
 - PAM loadable object files (modules) located at /lib/security or /lib64/security
 - Most modules are pre-built and pre-installed. New modules can be written based on an application need.
 - Main module is pam_unix.so which is responsible to verify authentication. You can use the man pages for so files (.so not required when searching)
+
+## PAM Aware Services and Stacks
+`ldd /usr/sbin/sshd | grep pam` : Check if this program is PAM aware.
