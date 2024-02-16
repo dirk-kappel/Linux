@@ -51,3 +51,7 @@ sudo vim /etc/ssh/sshd_config
 
 ### Show if ssh is listening
 `sudo ss -tunlp | grep ssh`
+
+
+### Troubleshoot ssh
+`sudo sshd -t`  : Shows any reported errors

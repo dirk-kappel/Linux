@@ -34,3 +34,10 @@
 `sudo apt dist-upgrade`
 - Packages may be added or removed. Will show up from upgrade under newly installed or to remove.
 - Run after upgrade.
+
+### List packages with apt
+`apt list`
+`apt show wget` : shows details of the wget package
+
+### rpm
+`rpm -qd wget` : shows the location of the docs and the manual page for the package.
