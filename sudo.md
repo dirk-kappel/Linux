@@ -26,5 +26,5 @@
 *dirk    ALL=(ALL:ALL)   NOPASSWD: /usr/bin/yum,/usr/bin/rm*
 - dirk can run yum and rm without a password.
 
-`sudo - dirk`
+`sudo su - dirk`
 - Switch User to dirk
